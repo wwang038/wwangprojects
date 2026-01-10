@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Experiences</title>
+    </head>
+    <body>
+        <div class="top-bar">
+            <a href="index.html">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="experiences.html">Projects + Experiences</a>
+            <a href="other-interests.html">Other Interests</a>
+            <div class="flex" style="padding:0; gap: 2vw; margin-left: 5vw; margin-right: 0;">
+                <a href="https://www.linkedin.com/in/winson-wang-b4780725b" target="_blank" style="padding: 0;">
+                    <img src="images/linkedin.png" alt="LinkedIn" style="width: 3vw; height: 3vw; padding: 0;">
+                </a>
+                <a href="https://github.com/wwang038" target="_blank" style="padding: 0;">
+                    <img src="images/github.png" alt="GitHub" style="width: 2.1vw; height: 2.1vw; padding: 0;">
+                </a>
+            </div>
+        </div>
+        <div id = "projects" style="padding-top: 3%;">
+            <h2 style="margin-bottom: 1%; margin-top: 5%;">Projects + Experiences</h2>
+            <p style="margin-bottom: 1%;">Here are some work I've done.</p>
+            <button class="accordion"><span>⭐Word Hunt Solver Website</span><span class="accordion-icon">+</span></button>
+            <div class="panel" id="word-hunt-solver">
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; ">Overview</h3>
+                <div class="flex" style="margin-left:0; margin-right:0; padding: 0%; gap: 5%; margin-top: 1%; justify-content: flex-start;">
+                    <div class="div2" style="padding: 0%; margin: 0%;">
+                        
+                        <p class="project-description" style="text-align: left;margin-right: 0;">The Word Hunt Solver is a full stack 
+                            web application that solves the game pigeon game "Word Hunt" by 
+                            finding all valid words, computing optimal scoring words, and 
+                            tracking board performances relative to previous boards. 
+                            <br>
+                            <br>
+                            Users 
+                            submit a board, receive a complete solution with scores, 
+                            and view how their results compare against prior runs 
+                            through percentile statistics and an interactive leaderboard. 
+                            
+        <br><br>
+                            The backend is built in Flask and exposes endpoints for
+                            board analysis, scoring, and history retrieval. A 
+                            frontend presents solutions and leaderboard 
+                            data in real time. Game results are stored in PostgreSQL, 
+                            powering percentile calculations and record dashboards. The 
+                            entire application is containerized with Docker and deployed
+                        on Fly.io, with AWS RDS used for managed database hosting.</p>
+                        </div>
+                    <div class="div1" style="width: 40%; height: auto; flex: none; max-width: none;padding: 0%; margin: 0%;">
+                        
+                        <img src="images/Video Project 2.gif" alt="Word Hunt Solver">
+                    </div>
+                    
+                </div>
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; margin-top: 1%;">Skills & Concepts Learned</h3>
+                <div class="flex" style="padding: 2%; gap: 5%; justify-content: flex-start; padding: 0">
+                    <div class="div2" style="padding: 0%; margin: 0%; margin-right: 12%">
+                        <p class="project-description" style="text-align: left;"></p>
+                            <ul>
+                                <li class="list-item"><b>Full stack</b> development with Flask</li>
+                                <li class="list-item">Database management with <b>PostgreSQL</b> and <b>AWS RDS</b></li>
+                                <li class="list-item">Containerization with Docker and Fly.io</li>
+                                <li class="list-item"><b>Data Stuctures and Algorithms</b>, including implementing a Trie for efficient word searching</li>
+                                <li class="list-item">Developer tooling via <b>DataGrip</b> for <b>schema design</b> and query iteration</li>
+                            </ul>
+                        </p>
+                    </div>
+                    
+                    <div class="flex" style="flex-direction:column;">
+                        
+                        <div class="try-the-website"> 
+                            <a href="https://word-hunt-solver-website-morning-mountain-1555.fly.dev/" target="_blank">
+                                <p> Live App </p>
+                            </a>
+                        </div>
+
+                        <div class="try-the-website">
+                            <a href="https://github.com/wwang038/Wordhunt-solver-website" target="_blank">
+                                <p>Github Repo </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+            <button class="accordion"><span>Conjoint Research @ Wharton Marking Department</span><span class="accordion-icon">+</span></button>
+            <div class="panel" id="conjoint-research" style="display:flex; flex-direction: row; justify-content: center; gap: 0; width: 97vw; align-content: center;">
+                <div style="margin-right: auto; width: 80%;">
+                    <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 1%;">Overview</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left; width: 200%; max-width: none;">
+                        Conducted research focused on optimizing statistical models for consumer behavior analysis through conjoint studies. 
+                        Applied statistical techniques to improve model efficiency while maintaining accuracy, and developed tools 
+                        for analyzing consumer preferences and pricing sensitivity.
+                    </p>
+                </div>
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; margin-top: 1%;">Key Accomplishments</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left;"></p>
+                        <ul>
+                            <li class="list-item" style="width: 200%;">Reduced model runtime and storage requirements by <b>20x</b> through applying statistical tests to evaluate existing and newly developed models while preserving significance levels</li>
+                            <li class="list-item" style="width: 200%;">Produced accurate consumer-behavior simulations by implementing <b>scikit-learn</b> models to estimate part-worth utilities for large conjoint datasets</li>
+                            <li class="list-item" style="width: 200%;">Enabled detailed analysis of consumer tradeoffs by developing tools that compute willingness-to-pay estimates and price sensitivities directly from part-worth utilities</li>
+                        </ul>
+                    </p>
+                </div>
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; margin-top: 1%;">Skills & Concepts Learned</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left; "></p>
+                        <ul>
+                            <li class="list-item" style="width: 200%;">Applied <b>bootstrapping</b> techniques for model evaluation</li>
+                            <li class="list-item" style="width: 200%;">Performed data analysis and transformations using <b>scikit-learn</b> and <b>NumPy</b></li>
+                            <li class="list-item" style="width: 200%;">Conducted statistical analysis in Python using <b>SciPy (scipy.stats)</b></li>
+                            <li class="list-item" style="width: 200%;">Rapidly onboarded into an existing mid-project codebase and contributed to collaborative development</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                </div>
+                <div class="right-col" style="margin-top: auto; margin-bottom: auto;">
+                    <img src="images/work in progress.png" alt="Work in Progress" class="wip-img">
+                    <p class="wip-text">Oops! This project is still a work in progress, and the repo is not yet public. Ask me if you're interested in learning more!</p>
+                </div>
+                </div>
+                
+            
+            <button class="accordion"><span>Software Developer @ PennVet Equine Pharmacology Laboratory</span><span class="accordion-icon">+</span></button>
+            <div class="panel" id="conjoint-research" style="display:flex; flex-direction: row; justify-content: center; gap: 0; width: 97vw; align-content: center;">
+                <div style="margin-right: auto; width: 80%;">
+                    <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 1%;">Overview</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left; width: 200%; max-width: none;">
+                        Worked as a software developer in the PennVet Equine Pharmacology Laboratory, 
+                        building and optimizing data-processing pipelines to support large-scale 
+                        chemical and pharmacological analysis. Focused on improving performance, 
+                        reliability, and automation, enabling faster and more consistent research analysis.
+                </div>
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; margin-top: 1%;">Key Accomplishments</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left;"></p>
+                        <ul>
+                            <li class="list-item" style="width: 200%;">Improved script performance by <b>500%</b> by identifying computational bottlenecks and refactoring inefficient data-processing logic</li>
+                            <li class="list-item" style="width: 200%;">Accelerated compound profiling by automating PubChem data extraction using <b>Selenium</b> and <b>Playwright</b>, retrieving 90+ pharmacological and biochemical properties per compound</li>
+                        </ul>
+                    </p>
+                </div>
+                <h3 style="font-weight: bold; text-align: left; font-size: 200%; padding: 0; margin-bottom: 0; margin-top: 1%;">Skills & Concepts Learned</h3>
+                <div class="div2" style="padding: 0%; margin: 0%;">
+                    <p class="project-description" style="text-align: left; "></p>
+                        <ul>
+                            <li class="list-item" style="width: 200%;">Web automation and scraping with <b>Selenium</b> and <b>Playwright</b></li>
+                            <li class="list-item" style="width: 200%;">Large-scale dataset handling and workflow standardization for research environments</li>
+                            <li class="list-item" style="width: 200%;">Writing maintainable, reusable utilities for collaborative scientific codebases</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                </div>
+                <div class="right-col" style="margin-top: auto; margin-bottom: auto;">
+                    <img src="images/work in progress.png" alt="Work in Progress" class="wip-img">
+                    <p class="wip-text">Oops! This project is still a work in progress, and the repo is not yet public. Ask me if you're interested in learning more!</p>
+                </div>
+                </div>
+            <div class="penguin-coding-container" style = "display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="images/penguin coding.png" alt="Penguin Coding" style="width: 20%; height: auto; margin-left: auto; margin-right: auto; margin-top: 1%">
+                <p class="penguin-coding-text">I'm a big fan of penguins.</p>
+            </div>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+
+                this.classList.toggle("active");
+
+                var panel = this.nextElementSibling;
+                var isOpening = !(panel.style.maxHeight && panel.style.maxHeight !== "0px");
+                
+                if (panel.style.maxHeight && panel.style.maxHeight !== "0px") {
+                panel.style.maxHeight = "0px";
+                } else {
+                panel.style.maxHeight = (panel.scrollHeight + 10) + "px";
+                }
+                
+                if (isOpening) {
+                    this.querySelector(".accordion-icon").textContent = "-";
+                    setTimeout(function() {
+                        this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }.bind(this), 200);
+                } else {
+                    this.querySelector(".accordion-icon").textContent = "+";
+                }
+            });
+            }
+
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-animate');
+                        entry.target.classList.add('animate__animated', 'animate_pulse');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const headers = document.querySelectorAll('h2, h3');
+                headers.forEach(header => {
+                    if (!header.classList.contains('animate__pulse')) {
+                        observer.observe(header);
+                    }
+                });
+            });
+    </script>
+    </body>
+</html>
