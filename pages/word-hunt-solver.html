@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Word Hunt Solver</title>
+    </head>
+    <body>
+        <div class="top-bar">
+            <a href="pages/index.html">Home</a>
+            <a href="pages/index.html#about">About</a>
+            <a href="pages/experiences.html">Projects + Experiences</a>
+            <a href="pages/other-interests.html">Other Interests</a>
+        </div>
+
+        <main class="page-content">
+            <article class="work-detail">
+                <div class="work-header">
+                    <div class="work-cover" style="height: auto;">
+                        <img src="images/Video Project 2.gif" alt="Word Hunt Solver">
+                    </div>
+                    <h1 class="work-title">Word Hunt Solver</h1>
+                    <p class="work-summary">A full-stack solver for GamePigeon Word Hunt that finds valid paths, ranks scoring options, and tracks board-level performance over time.</p>
+                </div>
+
+                <div class="work-meta">
+                    <div class="work-meta-row"><span class="work-label">Website</span><span class="work-value"><a href="https://word-hunt-solver-website-morning-mountain-1555.fly.dev/" target="_blank">Live App</a></span></div>
+                    <div class="work-meta-row"><span class="work-label">Repository</span><span class="work-value"><a href="https://github.com/wwang038/Wordhunt-solver-website" target="_blank">GitHub Repo</a></span></div>
+                    <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">Flask, PostgreSQL, Docker, Fly.io, AWS RDS</span></div>
+                </div>
+
+                <section class="work-section-card">
+                    <h3>Implementation Notes</h3>
+                    <ul>
+                        <li class="list-item">Designed backend endpoints for board analysis, scoring, and history retrieval with fast response for repeated lookups</li>
+                        <li class="list-item">Implemented a Trie-powered solver to efficiently enumerate valid words and maximize score output per board</li>
+                        <li class="list-item">Persisted board results in PostgreSQL to compute percentiles and historical ranking trends</li>
+                        <li class="list-item">Containerized the app with Docker and deployed with Fly.io + managed AWS RDS infrastructure</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>

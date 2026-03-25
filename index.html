@@ -2,73 +2,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Winson's Website</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="0; url=pages/index.html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Redirecting...</title>
+        <script>
+            window.location.replace("pages/index.html");
+        </script>
     </head>
     <body>
-        
-        <div class="top-bar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="experiences.html">Projects + Experiences</a>
-            <a href="other-interests.html">Other Interests</a>
-            <div class="flex" style="padding:0; gap: 2vw; margin-left: 5vw; margin-right: 0;">
-                <a href="https://www.linkedin.com/in/winson-wang-b4780725b" target="_blank" style="padding: 0;">
-                    <img src="images/linkedin.png" alt="LinkedIn" style="width: 3vw; height: 3vw; padding: 0;">
-                </a>
-                <a href="https://github.com/wwang038" target="_blank" style="padding: 0;">
-                    <img src="images/github.png" alt="GitHub" style="width: 2.1vw; height: 2.1vw; padding: 0;">
-                </a>
-            </div>
-
-        </div>
-
-        <div id="first-visit-alert" class="first-visit-alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <strong>Check this out!</strong> Visit the Word Hunt Solver under Projects for something cool.
-        </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                try {
-                    var hasVisited = sessionStorage.getItem('visitedIndex');
-                    var banner = document.getElementById('first-visit-alert');
-                    if (!hasVisited && banner) {
-                        banner.style.display = 'block';
-                        sessionStorage.setItem('visitedIndex', 'true');
-                    }
-                } catch (e) {
-                    var fallbackBanner = document.getElementById('first-visit-alert');
-                    if (fallbackBanner) {
-                        fallbackBanner.style.display = 'block';
-                    }
-                }
-            });
-        </script>
-        <div id = "home">
-            <h1 class="animate__animated animate__pulse">Welcome to Winson's Website !!</h1>
-        </div>
-        <div class="home-text">
-            <h2 class="animate__animated animate__fadeInUp" style="text-align: center; margin-top: 3vw; margin-bottom: 0; text-shadow: 5px 5px 15px #ffffffff; width: 50vw; height: auto"> Think of this as a digital portfolio and a record of some of my work and interests.</h2>
-        </div>
-        
-        <img src="images/Project 2.gif" alt="Coding Gif" style="position: absolute; top: 11vw; width: 70vw; height: auto; left: 31vw; margin-top: 1%; z-index: -1; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 25%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,1) 70%); mask-image: linear-gradient(to bottom, transparent 0%, transparent 35%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,1) 70%);">
-        
-
-        <div class="flex" id = "about" style="padding: 3%; margin-top: 2vw; padding-bottom: 0;">
-            <div class="div1">
-                <img src="images/about image.jpg" alt="Winson's Photo">
-            </div>
-            <div class="div2">
-                <h2>About Me</h2>
-                <p>Hi, I'm Winson. I'm a computer science student at 
-                    the University of Pennsylvania and I'm interested in 
-                    the intersection of software development, data science, 
-                    and statistics. Other than that, I'm a big fan of music 
-                    (I play the piano!), badminton, Minecraft, and ping pong.</p>
-            </div>
-        </div>
-        
+        Redirecting to <a href="pages/index.html">pages/index.html</a>...
     </body>
 </html>

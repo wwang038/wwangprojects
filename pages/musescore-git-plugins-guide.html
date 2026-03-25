@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Open-source MuseScore plugins — Usage guide</title>
+    </head>
+    <body>
+        <div class="top-bar">
+            <a href="pages/index.html">Home</a>
+            <a href="pages/index.html#about">About</a>
+            <a href="pages/experiences.html">Projects + Experiences</a>
+            <a href="pages/other-interests.html">Other Interests</a>
+        </div>
+
+        <main class="page-content">
+            <article class="guide-article guide-prose">
+                <p class="guide-kicker">Open-source MuseScore plugins</p>
+                <h1>Usage guide</h1>
+                <p class="guide-lead">
+                    Practical steps for this open-source MuseScore&nbsp;4 plugin suite: Git-backed scores, where files live, happy-path editing,
+                    and how to recover when your score and GitHub diverge—including the measure-level LCS diff workflow over score XML. Source and issues on
+                    <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">GitHub</a>.
+                </p>
+
+                <div class="work-cover guide-page-video" role="region" aria-label="Plugin demo video">
+                    <video controls poster="images/musescore-plugin-thumbnail.png">
+                        <source src="images/Musescore_plugin_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <p class="guide-back"><a class="work-link-internal" href="pages/musescore-git-plugins.html">← Back to project overview</a></p>
+
+                <h2>What this workflow assumes</h2>
+                <ul>
+                    <li>Scores in the repo are stored as <strong><code>.mscz</code> only</strong> (not raw <code>.mscx</code> in Git).</li>
+                    <li>Plugins sit in the MuseScore <strong>Plugins</strong> folder next to the <strong>Scores</strong> folder.</li>
+                    <li>Your Git working tree is the <strong>Scores</strong> directory (that folder contains <code>.git</code>).</li>
+                </ul>
+                <pre><code>.../MuseScore4/Plugins   ← plugin .qml files live here
+.../MuseScore4/Scores    ← git repo; commit .mscz here</code></pre>
+
+                <h2>Plugins you use</h2>
+                <ul>
+                    <li><strong>Commit to GitHub</strong> — stage, commit, push the open score; first run can set up the repo.</li>
+                    <li><strong>Pull from GitHub</strong> — fetch and merge; on failure, prepares a “copy” score for diffing.</li>
+                    <li><strong>MuseScore Diff</strong> — builds a visual diff score (measure-level alignment via LCS) and lets you reconcile in MuseScore.</li>
+                </ul>
+
+                <h2>Daily flow (you’re the only one changing the score)</h2>
+                <ol>
+                    <li>Open <code>Scores/&lt;Name&gt;.mscz</code> in MuseScore.</li>
+                    <li>Edit and save in MuseScore.</li>
+                    <li>Run <strong>Plugins → Commit to GitHub</strong>. It stages <code>&lt;Name&gt;.mscz</code>, commits, and pushes when the remote is not ahead.</li>
+                </ol>
+
+                <h2>When the remote might have new commits</h2>
+                <p>Before committing, use pull so you don’t trample remote work.</p>
+                <ol>
+                    <li>Open <code>Scores/&lt;Name&gt;.mscz</code>.</li>
+                    <li>Run <strong>Plugins → Pull from GitHub</strong>.
+                        <ul>
+                            <li>If pull succeeds: you’re up to date — keep editing, then <strong>Commit to GitHub</strong>.</li>
+                            <li>If pull can’t merge: the plugin aborts the merge, extracts the remote’s <code>.mscz</code> into a <code>- Copy</code> tree, and tells you to run <strong>MuseScore Diff</strong>.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2>MuseScore Diff (reconcile local vs remote)</h2>
+                <p>For a score named <code>Name</code>, the important paths are:</p>
+                <ul>
+                    <li>Your file in the repo: <code>Scores/Name.mscz</code></li>
+                    <li>Extracted local XML (when needed): <code>Scores/Name.mscx</code></li>
+                    <li>Remote copy for comparison: <code>Scores/Name - Copy/Name - Copy.mscx</code></li>
+                    <li>Generated diff score: <code>Scores/Name_diff.mscx</code></li>
+                    <li>Marker / log after a completed review: <code>Scores/Name_diff.log.txt</code></li>
+                </ul>
+                <p>On run, the diff flow ensures local XML exists (unzips from <code>.mscz</code> if needed), checks the <code>- Copy</code> file exists, then generates the diff score and opens it. After you edit in the diff score, use the review UI’s <strong>Save to Main</strong> to write the reconciled result back into <code>Name.mscz</code> and leave <code>Name_diff.log.txt</code> as the marker that you’re done diffing.</p>
+
+                <div class="guide-callout">
+                    <strong>Why LCS?</strong> Aligning measures with a longest-common-subsequence–style pass keeps the diff stable and reviewable directly in notation.
+                </div>
+
+                <h2>Commit after a diff</h2>
+                <p>When <code>Name_diff.log.txt</code> exists, <strong>Commit to GitHub</strong> takes the “I've finished the merge review” path: it can force-push <code>Name.mscz</code> and then removes the marker file so it isn’t reused by mistake.</p>
+                <p>If there is <em>no</em> diff marker and the remote is ahead, the commit plugin may extract the remote score and prompt you to run <strong>MuseScore Diff</strong> first instead of pushing blindly.</p>
+
+                <h2>First-time setup (Commit to GitHub)</h2>
+                <p>On first use you may be asked for a GitHub repo URL. The plugin clones to a temp directory and moves only the <code>.git</code> directory into <code>Scores</code> so your working tree stays in the scores folder.</p>
+
+                <h2>Temporary files you can ignore or delete</h2>
+                <p>Generated helpers under <code>Plugins/</code> (timestamped <code>.bat</code>, PowerShell, etc.) are meant to be ephemeral. The README in the repo lists names like <code>musescore-git-push-*.bat</code>, <code>musescore-diff.ps1</code>, and similar — safe to remove if you’re tidying up.</p>
+
+                <h2>Troubleshooting quick list</h2>
+                <ul>
+                    <li><strong>Commit refuses:</strong> Ensure the open file is <code>Scores/&lt;Name&gt;.mscz</code>, not a standalone <code>.mscx</code> — save as <code>.mscz</code> in the Scores repo path.</li>
+                    <li><strong>Pull says run Diff:</strong> Open the <code>- Copy</code> path exists, then run <strong>MuseScore Diff</strong> and complete <strong>Save to Main</strong> before committing again.</li>
+                    <li><strong>.git missing:</strong> Run through Commit’s first-time setup or initialize <code>Scores</code> as a repo first.</li>
+                </ul>
+
+                <p style="margin-top: 2rem;">
+                    <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">Full README on GitHub →</a>
+                </p>
+            </article>
+        </main>
+    </body>
+</html>
