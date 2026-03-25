@@ -19,6 +19,8 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    min-height: 100vh;
+    background: transparent;
 }
 
 html {
@@ -28,18 +30,28 @@ html {
 * {
     box-sizing: border-box;
 }
-
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     max-width: 100%;
     overflow-x: hidden;
     font-family: "Inter", "M PLUS Rounded 1c", sans-serif;
     color: var(--text);
+    
     background:
+    
         radial-gradient(circle at 10% 8%, rgba(122, 162, 255, 0.2), transparent 36%),
         radial-gradient(circle at 85% 15%, rgba(159, 122, 234, 0.17), transparent 42%),
-        linear-gradient(180deg, #0c0e14 0%, #0f1117 45%, #0b0d12 100%);
+        linear-gradient(
+            180deg,
+            #0c0e14 0px,
+            #0f1117 250px,
+            #0b0d12 500px,
+            #0f1117 750px,
+            #0c0e14 1000px
+        );
+        background-repeat: no-repeat, no-repeat, no-repeat;
     gap: 20px;
 }
 
@@ -157,7 +169,7 @@ p {
 
 .top-bar {
     position: fixed;
-    width: min(96vw, 1180px);
+    width: min(1180px);
     display: flex;
     left: 50%;
     transform: translateX(-50%);
@@ -172,15 +184,20 @@ p {
     z-index: 100;
     box-shadow: var(--shadow);
     padding: 8px 10px;
+    text-align: center;
 }
 
 .top-bar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--text);
     text-align: center;
-    padding: 12px 14px;
+    padding: 0px 18px;
     text-decoration: none;
     font-size: 0.96rem;
     border-radius: 999px;
+    
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -446,6 +463,33 @@ body > img[style*="position: absolute"] {
     filter: saturate(0.8) blur(0.4px);
 }
 
+/* Other Interests: ensure background extends + brighten overlays */
+.other-interests-page {
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100vh;
+    background-color: #0c0e14;
+}
+
+
+.other-interests-page > img[style*="position: absolute"] {
+    opacity: 0.28 !important;
+    filter: brightness(1.25) saturate(1.05) blur(0.25px) !important;
+}
+
+.other-interest-video-col {
+    flex: none !important;
+    width: min(720px, 52vw) !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.other-interest-video {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 16px;
+}
+
 .experiences-page .accordion {
     display: none;
 }
@@ -551,8 +595,7 @@ body > img[style*="position: absolute"] {
 .work-cover {
     width: 100%;
     height: auto;
-    aspect-ratio: 16 / 9;
-    max-height: min(58vh, 440px);
+
     border-radius: 16px;
     overflow: hidden;
     background: rgba(20, 24, 36, 0.9);
