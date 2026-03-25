@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <title>Open-source MuseScore plugins — Git workflow</title>
+    </head>
+    <body>
+        <div class="top-bar">
+            <a href="pages/index.html">Home</a>
+            <a href="pages/index.html#about">About</a>
+            <a href="pages/experiences.html">Projects + Experiences</a>
+            <a href="pages/other-interests.html">Other Interests</a>
+        </div>
+
+        <main class="page-content">
+            <article class="work-detail">
+                <div class="work-header">
+                    <div class="work-cover">
+                        <video controls poster="images/musescore-plugin-thumbnail.png">
+                            <source src="images/Musescore_plugin_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <h1 class="work-title">Open-source MuseScore plugins</h1>
+                    <p class="work-summary">Open-source work in the MuseScore ecosystem: MuseScore&nbsp;4 plugins that bring Git-backed collaboration into ordinary score editing.</p>
+                    <p class="work-summary">The heart of it is structural merge logic—measure-level longest common subsequence (LCS) on score XML—so two divergent versions become an in-editor visual diff you reconcile in notation. Around that pipeline sit PowerShell, batch, and Git worktrees for extraction, review, and push.</p>
+                </div>
+
+                <div class="work-meta">
+                    <div class="work-meta-row"><span class="work-label">Repository</span><span class="work-value"><a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">GitHub Repo</a></span></div>
+                    <div class="work-meta-row"><span class="work-label">Guide</span><span class="work-value"><a class="work-link-internal" href="pages/musescore-git-plugins-guide.html" target="_blank" rel="noopener noreferrer">Read full usage guide</a></span></div>
+                    <div class="work-meta-row"><span class="work-label">Contribution</span><span class="work-value">Public OSS · MuseScore 4 plugin development (QML) for real-world score workflows</span></div>
+                    <div class="work-meta-row"><span class="work-label">Platform</span><span class="work-value">Windows + MuseScore 4 plugin environment</span></div>
+                    <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">MuseScore 4 (QML plugins), PowerShell XML pipeline, Git worktree, Batch for host integration</span></div>
+                </div>
+
+                <section class="work-section-card">
+                    <h3>Implementation Notes</h3>
+                    <ul>
+                        <li class="list-item">Published as open source so MuseScore users can adopt Git-backed scores without leaving the notation tool</li>
+                        <li class="list-item">Implemented merge logic with LCS alignment at measure granularity over score structure for stable, notation-native diffs</li>
+                        <li class="list-item">Generated a reviewable diff score inside MuseScore and a write-back path into <code>.mscz</code> after reconciliation</li>
+                        <li class="list-item">Connected QML plugin actions to Git worktrees, archive handling, and the XML/LCS pipeline end to end</li>
+                    </ul>
+                </section>
+            </article>
+        </main>
+    </body>
+</html>
