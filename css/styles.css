@@ -169,7 +169,7 @@ p {
 
 .top-bar {
     position: fixed;
-    width: min(1180px);
+    width: min(96vw, 1180px);
     display: flex;
     left: 50%;
     transform: translateX(-50%);
@@ -888,6 +888,26 @@ video:fullscreen {
 .guide-prose a:hover {
     color: #e88fcd;
     text-decoration: underline;
+}
+
+/* External links in long-form guide: add the outbound icon */
+.guide-prose a[target="_blank"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.guide-prose a[target="_blank"]::after {
+    content: "";
+    flex-shrink: 0;
+    width: 0.95em;
+    height: 0.95em;
+    background: no-repeat center / contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D566B1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpath d='M15 3h6v6'/%3E%3Cpath d='M10 14L21 3'/%3E%3C/svg%3E");
+}
+
+.guide-prose a[target="_blank"]:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E88FCD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'/%3E%3Cpath d='M15 3h6v6'/%3E%3Cpath d='M10 14L21 3'/%3E%3C/svg%3E");
 }
 
 .guide-callout {
