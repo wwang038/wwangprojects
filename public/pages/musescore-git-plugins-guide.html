@@ -28,7 +28,7 @@
                 <p class="guide-kicker">Open-source MuseScore plugins</p>
                 <h1>Usage guide</h1>
                 <p class="guide-lead">
-                    Practical steps for this open-source MuseScore&nbsp;4 plugin suite: Git-backed scores, where files live, happy-path editing,
+                    Practical steps for this open-source MuseScore 4 plugin suite: Git-backed scores, where files live, happy-path editing,
                     and how to recover when your score and GitHub diverge—including the measure-level LCS diff workflow over score XML. Source and issues on
                     <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">GitHub</a>.
                 </p>
@@ -53,26 +53,26 @@
                     <li><strong>
                         <a href="https://musescore.org/en/project/commit-github" target="_blank" rel="noopener noreferrer">Commit to GitHub</a></strong> — stage, commit, push the open score; first run can set up the repo.</li>
                     <li><strong>
-                        <a href="https://musescore.org/en/project/pull-github" target="_blank" rel="noopener noreferrer">Pull from GitHub</a></strong> — fetch and merge; on failure, prepares a “copy” score for diffing.</li>
+                        <a href="https://musescore.org/en/project/pull-github" target="_blank" rel="noopener noreferrer">Pull from GitHub</a></strong> — fetch and merge; on failure, prepares a "copy" score for diffing.</li>
                     <li><strong>
                         <a href="https://musescore.org/en/project/get-differences-between-scores" target="_blank" rel="noopener noreferrer">MuseScore Diff</a></strong> — builds a visual diff score (measure-level alignment via LCS) and lets you reconcile in MuseScore.</li>
                 </ul>
 
-                <h2>Daily flow (you’re the only one changing the score)</h2>
+                <h2>Daily flow (you're the only one changing the score)</h2>
                 <ol>
                     <li>Open <code>Scores/&lt;Name&gt;.mscz</code> in MuseScore.</li>
                     <li>Edit and save in MuseScore.</li>
-                    <li>Run <strong>Plugins → Commit to GitHub</strong>. It stages <code>&lt;Name&gt;.mscz</code>, commits, and pushes when the remote is not ahead.</li>
+                    <li>Run <strong>Plugins -> Commit to GitHub</strong>. It stages <code>&lt;Name&gt;.mscz</code>, commits, and pushes when the remote is not ahead.</li>
                 </ol>
 
                 <h2>When the remote might have new commits</h2>
-                <p>Before committing, use pull so you don’t trample remote work.</p>
+                <p>Before committing, use pull so you don't trample remote work.</p>
                 <ol>
                     <li>Open <code>Scores/&lt;Name&gt;.mscz</code>.</li>
-                    <li>Run <strong>Plugins → Pull from GitHub</strong>.
+                    <li>Run <strong>Plugins -> Pull from GitHub</strong>.
                         <ul>
-                            <li>If pull succeeds: you’re up to date — keep editing, then <strong>Commit to GitHub</strong>.</li>
-                            <li>If pull can’t merge: the plugin aborts the merge, extracts the remote’s <code>.mscz</code> into a <code>- Copy</code> tree, and tells you to run <strong>MuseScore Diff</strong>.</li>
+                            <li>If pull succeeds: you're up to date - keep editing, then <strong>Commit to GitHub</strong>.</li>
+                            <li>If pull can't merge: the plugin aborts the merge, extracts the remote's <code>.mscz</code> into a <code>- Copy</code> tree, and tells you to run <strong>MuseScore Diff</strong>.</li>
                         </ul>
                     </li>
                 </ol>
@@ -86,14 +86,14 @@
                     <li>Generated diff score: <code>Scores/Name_diff.mscx</code></li>
                     <li>Marker / log after a completed review: <code>Scores/Name_diff.log.txt</code></li>
                 </ul>
-                <p>On run, the diff flow ensures local XML exists (unzips from <code>.mscz</code> if needed), checks the <code>- Copy</code> file exists, then generates the diff score and opens it. After you edit in the diff score, use the review UI’s <strong>Save to Main</strong> to write the reconciled result back into <code>Name.mscz</code> and leave <code>Name_diff.log.txt</code> as the marker that you’re done diffing.</p>
+                <p>On run, the diff flow ensures local XML exists (unzips from <code>.mscz</code> if needed), checks the <code>- Copy</code> file exists, then generates the diff score and opens it. After you edit in the diff score, use the review UI's <strong>Save to Main</strong> to write the reconciled result back into <code>Name.mscz</code> and leave <code>Name_diff.log.txt</code> as the marker that you're done diffing.</p>
 
                 <div class="guide-callout">
                     <strong>Why LCS?</strong> Aligning measures with a longest-common-subsequence–style pass keeps the diff stable and reviewable directly in notation.
                 </div>
 
                 <h2>Commit after a diff</h2>
-                <p>When <code>Name_diff.log.txt</code> exists, <strong>Commit to GitHub</strong> takes the “I've finished the merge review” path: it can force-push <code>Name.mscz</code> and then removes the marker file so it isn’t reused by mistake.</p>
+                <p>When <code>Name_diff.log.txt</code> exists, <strong>Commit to GitHub</strong> takes the "I've finished the merge review" path: it can force-push <code>Name.mscz</code> and then removes the marker file so it isn't reused by mistake.</p>
                 <p>If there is <em>no</em> diff marker and the remote is ahead, the commit plugin may extract the remote score and prompt you to run <strong>MuseScore Diff</strong> first instead of pushing blindly.</p>
 
                 <h2>First-time setup (Commit to GitHub)</h2>
@@ -106,11 +106,11 @@
                 <ul>
                     <li><strong>Commit refuses:</strong> Ensure the open file is <code>Scores/&lt;Name&gt;.mscz</code>, not a standalone <code>.mscx</code> — save as <code>.mscz</code> in the Scores repo path.</li>
                     <li><strong>Pull says run Diff:</strong> Open the <code>- Copy</code> path exists, then run <strong>MuseScore Diff</strong> and complete <strong>Save to Main</strong> before committing again.</li>
-                    <li><strong>.git missing:</strong> Run through Commit’s first-time setup or initialize <code>Scores</code> as a repo first.</li>
+                    <li><strong>.git missing:</strong> Run through Commit's first-time setup or initialize <code>Scores</code> as a repo first.</li>
                 </ul>
 
                 <p style="margin-top: 2rem;">
-                    <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">Full README on GitHub →</a>
+                    <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">Full README on GitHub -></a>
                 </p>
             </article>
         </main>
