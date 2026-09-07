@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Abstract bar-chart mark representing conjoint analysis">
+  <rect width="400" height="225" fill="#1b1f2b"/>
+  <g fill="none" stroke="#2a2f42" stroke-width="1">
+    <line x1="0" y1="187" x2="400" y2="187"/>
+  </g>
+  <g fill="#7aa2ff">
+    <rect x="90" y="120" width="26" height="67" rx="4"/>
+    <rect x="140" y="90" width="26" height="97" rx="4"/>
+    <rect x="190" y="60" width="26" height="127" rx="4"/>
+  </g>
+  <g fill="#9f7aea">
+    <rect x="240" y="100" width="26" height="87" rx="4"/>
+    <rect x="290" y="140" width="26" height="47" rx="4"/>
+  </g>
+</svg>

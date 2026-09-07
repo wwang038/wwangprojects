@@ -2,10 +2,37 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Winson's Website</title>
+        <meta name="description" content="Winson Wang's portfolio: a University of Pennsylvania CS student building full-stack apps, open-source tools, and SOC 2 compliance software.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Winson's Website">
+        <meta property="og:description" content="Winson Wang's portfolio: a University of Pennsylvania CS student building full-stack apps, open-source tools, and SOC 2 compliance software.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/about%20image.jpg">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Winson's Website</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Winson Wang",
+            "url": "https://REPLACE-WITH-YOUR-DOMAIN/",
+            "sameAs": [
+                "https://www.linkedin.com/in/winson-wang-b4780725b",
+                "https://github.com/wwang038"
+            ],
+            "affiliation": {
+                "@type": "CollegeOrUniversity",
+                "name": "University of Pennsylvania"
+            }
+        }
+        </script>
     </head>
     <body>
         <div class="top-bar">
@@ -55,23 +82,43 @@
                     </video>
                     <div class="hero-overlay">
                         <p class="hero-kicker">WELCOME TO</p>
-                        <h1 class="animate__animated animate__pulse">Winson's Website</h1>
+                        <h1 class="animate__animated animate__fadeIn">Winson's Website</h1>
                         <h2 class="animate__animated animate__fadeInUp" style="text-align: center; margin-top: 1rem; margin-bottom: 0; width: 80%; height: auto">
                             Think of this as a digital portfolio and a record of some of my work and interests.
                         </h2>
+                        <a class="hero-cta animate__animated animate__fadeInUp" href="pages/experiences.html" style="animation-delay: 0.2s;">View My Work</a>
+                    </div>
+                    <div class="hero-chip hero-chip--1">
+                        <span class="hero-chip-dot hero-chip-dot--done"></span>
+                        <span>Live: Securest SOC 2 platform</span>
+                    </div>
+                    <div class="hero-chip hero-chip--2">
+                        <span class="hero-chip-dot"></span>
+                        <span>Open source: MuseScore plugins</span>
                     </div>
                 </div>
             </section>
 
-            <div class="flex" id="about" style="padding: 3%; margin-top: 2vw; padding-bottom: 0; margin-bottom: 2vw;">
+            <div class="flex reveal" id="about" style="padding: 3%; margin-top: 2vw; padding-bottom: 0; margin-bottom: 2vw;">
                 <div class="div1">
-                    <img src="images/about image.jpg" alt="Winson's Photo">
+                    <span class="about-photo">
+                        <img src="images/about image.jpg" alt="Winson's Photo">
+                    </span>
                 </div>
                 <div class="div2">
                     <h2>About Me</h2>
                     <p>Hi, I'm Winson. I'm a computer science student at the University of Pennsylvania and I'm interested in the intersection of software development, data science, and statistics. Other than that, I'm a big fan of music (I play the piano!), badminton, Minecraft, and ping pong.</p>
                 </div>
             </div>
+
+            <section class="view-more-cta">
+                <h2>Want to see what I've actually built?</h2>
+                <p>Full-stack apps, open-source tools, and real production work, from a Word Hunt solver to a SOC 2 compliance platform.</p>
+                <a class="hero-cta pop-btn" href="pages/experiences.html">See the Work</a>
+            </section>
         </main>
+        <script src="js/reveal.js" defer></script>
+        <script src="js/view-more-reveal.js" defer></script>
+        <script src="js/hero-chips.js" defer></script>
     </body>
 </html>

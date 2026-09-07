@@ -2,10 +2,20 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Conjoint Research @ Wharton</title>
+        <meta name="description" content="Research work at Wharton improving computational efficiency and statistical rigor for conjoint analysis pipelines using Python, scikit-learn, and SciPy.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/conjoint-research.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Conjoint Research @ Wharton">
+        <meta property="og:description" content="Research work at Wharton improving computational efficiency and statistical rigor for conjoint analysis pipelines using Python, scikit-learn, and SciPy.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/wwang%20projects%20favicon.png">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/conjoint-research.html">
+        <meta name="twitter:card" content="summary">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Conjoint Research @ Wharton</title>
     </head>
     <body>
         <div class="top-bar">
@@ -27,28 +37,61 @@
             <article class="work-detail">
                 <div class="work-header">
                     <div class="work-cover">
-                        <img src="images/work in progress.png" alt="Conjoint Research">
+                        <img src="images/conjoint-research-placeholder.svg" alt="Conjoint Research">
                     </div>
                     <h1 class="work-title">Conjoint Research @ Wharton</h1>
-                    <p class="work-summary">Research-driven modeling work focused on improving computational efficiency and statistical rigor for conjoint analysis pipelines.</p>
+                    <p class="work-summary">Sped up the statistical models behind a Wharton consumer-research project (Python, scikit-learn), cutting simulation runtime and storage roughly <span class="hl">20x</span> while keeping the results just as statistically valid.</p>
                 </div>
 
                 <div class="work-meta">
                     <div class="work-meta-row"><span class="work-label">Domain</span><span class="work-value">Consumer behavior modeling, pricing sensitivity, simulation pipelines</span></div>
                     <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">Python, scikit-learn, NumPy, SciPy</span></div>
-                    <div class="work-meta-row"><span class="work-label">Impact</span><span class="work-value">~20x reduction in runtime/storage with maintained significance</span></div>
+                    <div class="work-meta-row"><span class="work-label">Impact</span><span class="work-value"><span class="hl">~20x</span> reduction in runtime/storage with maintained significance</span></div>
+                </div>
+
+                <div class="guide-callout">
+                    <strong>~20x faster:</strong> optimized simulation and estimation pipelines cut runtime and storage roughly 20x while preserving statistical significance.
                 </div>
 
                 <section class="work-section-card">
                     <h3>Implementation Notes</h3>
-                    <ul>
-                        <li class="list-item">Benchmarked existing and proposed models with statistical tests to ensure efficiency gains did not degrade inferential quality</li>
-                        <li class="list-item">Implemented simulation and utility-estimation workflows to support part-worth computation on larger datasets</li>
-                        <li class="list-item">Built analysis tooling for willingness-to-pay and tradeoff interpretation to make outcomes easier to use downstream</li>
-                        <li class="list-item">Integrated quickly into an in-flight research codebase and delivered iterative improvements collaboratively</li>
-                    </ul>
+                    <div class="notes-accordion">
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">01</span>
+                                <span class="notes-title">Benchmarking</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Benchmarked existing and proposed models with statistical tests to ensure <span class="hl">efficiency gains did not degrade inferential quality</span>.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">02</span>
+                                <span class="notes-title">Simulation workflows</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Implemented simulation and utility-estimation workflows to support <span class="hl">part-worth computation</span> on larger datasets.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">03</span>
+                                <span class="notes-title">Analysis tooling</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Built analysis tooling for <span class="hl">willingness-to-pay and tradeoff interpretation</span> to make outcomes easier to use downstream.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">04</span>
+                                <span class="notes-title">Codebase integration</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Integrated quickly into an in-flight research codebase and delivered iterative improvements collaboratively.</p></div></div>
+                        </div>
+                    </div>
                 </section>
             </article>
         </main>
+        <script src="js/notes-accordion.js" defer></script>
     </body>
 </html>

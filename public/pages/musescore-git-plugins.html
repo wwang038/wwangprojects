@@ -2,10 +2,20 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Open-source MuseScore plugins: Git workflow</title>
+        <meta name="description" content="Open-source MuseScore 4 plugins that bring Git-backed collaboration and measure-level LCS diffing into ordinary score editing.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/musescore-git-plugins.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Open-source MuseScore plugins: Git workflow">
+        <meta property="og:description" content="Open-source MuseScore 4 plugins that bring Git-backed collaboration and measure-level LCS diffing into ordinary score editing.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/musescore-plugin-thumbnail.png">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/musescore-git-plugins.html">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Open-source MuseScore plugins — Git workflow</title>
     </head>
     <body>
         <div class="top-bar">
@@ -32,7 +42,7 @@
                         Your browser does not support the video tag.
                       </video>
                     
-                    <p class="work-summary">Open-source work in the MuseScore ecosystem: MuseScore 4 plugins that bring Git-backed collaboration into ordinary score editing.</p>
+                    <p class="work-summary">Built open-source MuseScore 4 plugins (QML, PowerShell, Git) that bring version control into ordinary score editing, <span class="hl">published live</span> in the official MuseScore plugin directory.</p>
                     <p class="work-summary">The heart of it is structural merge logic-measure-level longest common subsequence (LCS) on score XML-so two divergent versions become an in-editor visual diff you reconcile in notation. Around that pipeline sit PowerShell, batch, and Git worktrees for extraction, review, and push.</p>
                 </div>
 
@@ -44,14 +54,46 @@
                     <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">MuseScore 4 (QML plugins), PowerShell XML pipeline, Git worktree, Batch for host integration</span></div>
                 </div>
 
+                <div class="guide-callout">
+                    <strong>Live on MuseScore.org:</strong> all three plugins (Commit to GitHub, Pull from GitHub, MuseScore Diff) are published in the official MuseScore plugin directory.
+                </div>
+
                 <section class="work-section-card">
                     <h3>Implementation Notes</h3>
-                    <ul>
-                        <li class="list-item">Published as open source so MuseScore users can adopt Git-backed scores without leaving the notation tool</li>
-                        <li class="list-item">Implemented merge logic with LCS alignment at measure granularity over score structure for stable, notation-native diffs</li>
-                        <li class="list-item">Generated a reviewable diff score inside MuseScore and a write-back path into <code>.mscz</code> after reconciliation</li>
-                        <li class="list-item">Connected QML plugin actions to Git worktrees, archive handling, and the XML/LCS pipeline end to end</li>
-                    </ul>
+                    <div class="notes-accordion">
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">01</span>
+                                <span class="notes-title">Open-source release</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Published as open source so MuseScore users can adopt Git-backed scores without leaving the notation tool.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">02</span>
+                                <span class="notes-title">LCS merge logic</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Implemented merge logic with <span class="hl">LCS alignment at measure granularity</span> over score structure for stable, notation-native diffs.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">03</span>
+                                <span class="notes-title">Diff &amp; write-back</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Generated a reviewable diff score inside MuseScore and a write-back path into <code>.mscz</code> after reconciliation.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">04</span>
+                                <span class="notes-title">Git worktree integration</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Connected QML plugin actions to <span class="hl">Git worktrees</span>, archive handling, and the XML/LCS pipeline end to end.</p></div></div>
+                        </div>
+                    </div>
                 </section>
 
                 <section class="work-section-card">
@@ -73,5 +115,6 @@
                 </section>
             </article>
         </main>
+        <script src="js/notes-accordion.js" defer></script>
     </body>
 </html>

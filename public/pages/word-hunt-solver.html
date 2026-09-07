@@ -2,10 +2,20 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Word Hunt Solver</title>
+        <meta name="description" content="A full-stack Word Hunt solver built with Flask, PostgreSQL, and Docker that finds valid paths, ranks scoring options, and tracks board performance.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/word-hunt-solver.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Word Hunt Solver">
+        <meta property="og:description" content="A full-stack Word Hunt solver built with Flask, PostgreSQL, and Docker that finds valid paths, ranks scoring options, and tracks board performance.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/wwang%20projects%20favicon.png">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/word-hunt-solver.html">
+        <meta name="twitter:card" content="summary">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Word Hunt Solver</title>
     </head>
     <body>
         <div class="top-bar">
@@ -30,7 +40,7 @@
                         <img src="images/Video Project 2.gif" alt="Word Hunt Solver">
                     </div>
                     <h1 class="work-title">Word Hunt Solver</h1>
-                    <p class="work-summary">A full-stack solver for GamePigeon Word Hunt that finds valid paths, ranks scoring options, and tracks board-level performance over time.</p>
+                    <p class="work-summary">Built a full-stack solver for GamePigeon Word Hunt (Flask, PostgreSQL, Docker) that finds every valid word on a board, ranks the best-scoring paths, and saves each user's performance history behind <span class="hl">OAuth login</span>, deployed live on Fly.io with managed AWS RDS.</p>
 
                     <div class="work-mini-demo">
                         <img src="images/Video Project 2.gif" alt="Word Hunt Solver demo thumbnail">
@@ -43,16 +53,57 @@
                     <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">Flask, PostgreSQL, Docker, Fly.io, AWS RDS</span></div>
                 </div>
 
+                <div class="guide-callout">
+                    <strong>Full production deploy:</strong> a Flask + PostgreSQL backend, Dockerized and running live on Fly.io with managed AWS RDS, built solo end to end.
+                </div>
+
                 <section class="work-section-card">
                     <h3>Implementation Notes</h3>
-                    <ul>
-                        <li class="list-item">Designed backend endpoints for board analysis, scoring, and history retrieval with fast response for repeated lookups</li>
-                        <li class="list-item">Implemented a Trie-powered solver to efficiently enumerate valid words and maximize score output per board</li>
-                        <li class="list-item">Persisted board results in PostgreSQL to compute percentiles and historical ranking trends</li>
-                        <li class="list-item">Containerized the app with Docker and deployed with Fly.io + managed AWS RDS infrastructure</li>
-                    </ul>
+                    <div class="notes-accordion">
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">01</span>
+                                <span class="notes-title">Backend endpoints</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Designed backend endpoints for board analysis, scoring, and history retrieval with <span class="hl">fast response for repeated lookups</span>.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">02</span>
+                                <span class="notes-title">Trie-powered solver</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Implemented a <span class="hl">Trie-powered solver</span> to efficiently enumerate valid words and maximize score output per board.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">03</span>
+                                <span class="notes-title">Persisted results</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Persisted board results in PostgreSQL to compute <span class="hl">percentiles and historical ranking trends</span>.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">04</span>
+                                <span class="notes-title">Containerized &amp; deployed</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Containerized the app with Docker and deployed with <span class="hl">Fly.io + managed AWS RDS</span> infrastructure.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">05</span>
+                                <span class="notes-title">OAuth login</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Added <span class="hl">OAuth login</span> so a user's scores and board history save to their own account instead of resetting every session.</p></div></div>
+                        </div>
+                    </div>
                 </section>
             </article>
         </main>
+        <script src="js/notes-accordion.js" defer></script>
     </body>
 </html>

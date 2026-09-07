@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Software Engineering Intern @ Securest</title>
+        <meta name="description" content="Connector framework, tenant isolation, and access-approval workflow I built as a software engineering intern at Securest, a SOC 2 compliance platform.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/securest.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Software Engineering Intern @ Securest">
+        <meta property="og:description" content="Connector framework, tenant isolation, and access-approval workflow I built as a software engineering intern at Securest, a SOC 2 compliance platform.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/settings%20page.png">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/securest.html">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
+    </head>
+    <body>
+        <div class="top-bar">
+            <a href="pages/index.html#home">Home</a>
+            <a href="pages/index.html#about">About</a>
+            <a href="pages/experiences.html">Projects + Experiences</a>
+            <a href="pages/other-interests.html">Other Interests</a>
+            <div class="flex" style="padding:0; gap: 2vw; margin-left: 5vw; margin-right: 0;">
+                <a href="https://www.linkedin.com/in/winson-wang-b4780725b" target="_blank" style="padding: 0;">
+                    <img src="images/linkedin.png" alt="LinkedIn" style="width: 3vw; height: 3vw; padding: 0;">
+                </a>
+                <a href="https://github.com/wwang038" target="_blank" style="padding: 0;">
+                    <img src="images/github.png" alt="GitHub" style="width: 2.1vw; height: 2.1vw; padding: 0;">
+                </a>
+            </div>
+        </div>
+
+        <main class="page-content">
+            <article class="work-detail">
+                <div class="work-header">
+                    <div class="work-cover">
+                        <img src="images/settings page.png" alt="Securest connector settings page listing dozens of connected third-party services, organized by category, with a search bar over the connector grid.">
+                    </div>
+                    <h1 class="work-title">Software Engineering Intern @ Securest</h1>
+                    <p class="work-summary">Securest is a SOC 2 compliance platform. I built the third-party application connectors (Secureframe, GitHub, HubSpot, and more) and the access-request workflow behind it (Python, PostgreSQL/Supabase), continuously syncing employee access data and automating away <span class="hl">~228 hours</span> of manual access reviews across 29 onboarded clients.</p>
+                </div>
+
+                <div class="work-meta">
+                    <div class="work-meta-row"><span class="work-label">Role</span><span class="work-value">Software Engineering Intern, Summer 2026</span></div>
+                    <div class="work-meta-row"><span class="work-label">Stack</span><span class="work-value">Python, PostgreSQL/Supabase, async connector architecture</span></div>
+                    <div class="work-meta-row"><span class="work-label">Scale</span><span class="work-value">6 SaaS connectors · 29 client environments</span></div>
+                </div>
+
+                <div class="guide-callout">
+                    <strong>~228 hours saved:</strong> continuous automated syncing across live-connector clients replaced what would have been manual, periodic access reviews, in under 3 months.
+                </div>
+
+                <nav class="guide-toc" aria-label="Jump to section">
+                    <p class="guide-toc-heading">Contents</p>
+                    <ol>
+                        <li>
+                            <a href="pages/securest.html#connectors"><span class="toc-label">Connector framework</span></a>
+                            <ol class="guide-toc-sub">
+                                <li><a href="pages/securest.html#main-approach"><span class="toc-label">Main approach</span></a></li>
+                                <li><a href="pages/securest.html#no-api-approach"><span class="toc-label">No-API approach</span></a></li>
+                            </ol>
+                        </li>
+                        <li><a href="pages/securest.html#security"><span class="toc-label">Security &amp; isolation</span></a></li>
+                        <li><a href="pages/securest.html#workflow"><span class="toc-label">Access workflow</span></a></li>
+                        <li><a href="pages/securest.html#shadow-it"><span class="toc-label">Shadow IT</span></a></li>
+                    </ol>
+                </nav>
+
+                <section class="work-section-card">
+                    <h3 id="connectors">Connector framework</h3>
+                    <p>Instead of six separate one-off integration scripts, I built a single connector framework: a shared interface, a registry, and one sync dispatcher every connector runs through, with per-tenant locking and a staleness notice so admins know when data might be out of date.</p>
+
+                    <h4 id="main-approach">Main approach</h4>
+                    <p>Six platforms connect directly over their own APIs, each with its own quirks to handle.</p>
+                    <div class="notes-accordion">
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">01</span>
+                                <span class="notes-title">Secureframe</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>The flagship connector: full personnel sync, dedup, a <span class="hl">source-aware delete</span> that preserves audit history, and retry/backoff hardening against rate limits.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">02</span>
+                                <span class="notes-title">GitHub</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Org-level sync, the full GitHub App OAuth flow, and <span class="hl">outside-collaborator detection</span>, a common SOC 2 access-review finding.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">03</span>
+                                <span class="notes-title">HubSpot</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Built the connector and caught a <span class="hl">false-negative bug</span> where deactivated users were showing up as still active.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">04</span>
+                                <span class="notes-title">Google Workspace</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p><span class="hl">Domain-Wide Delegation</span> auth and terminated-user detection.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">05</span>
+                                <span class="notes-title">Microsoft Entra ID</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Built end-to-end, including the setup guide.</p></div></div>
+                        </div>
+                        <div class="notes-item">
+                            <button class="notes-trigger" aria-expanded="false">
+                                <span class="notes-num">06</span>
+                                <span class="notes-title">Lokalise</span>
+                                <span class="notes-plus">+</span>
+                            </button>
+                            <div class="notes-panel"><div class="notes-panel-inner"><p>Replaced a generic bolt-on integration with a <span class="hl">real, purpose-built connector</span>.</p></div></div>
+                        </div>
+                    </div>
+
+                    <h4 id="no-api-approach">No-API approach</h4>
+                    <p>Some platforms don't expose an API, or a client won't grant one. For those, I built a <span class="hl">headless, session-based evidence-capture flow</span> with working 2FA handling, so those tools can still produce audit evidence instead of being excluded from review entirely.</p>
+                    <figure class="guide-shot">
+                        <img src="images/systems page.png" alt="Systems tab showing connected systems tiered by sync method: Secureframe as Tier 1, REST API platforms as Tier 2, and Pusher as Tier 3 browser automation.">
+                        <figcaption>Systems tiered by how they sync. Tier 3 is the browser-automation approach for platforms with no API.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="work-section-card">
+                    <h3 id="security">Security &amp; isolation</h3>
+                    <p>Every customer table runs Postgres <code>FORCE ROW LEVEL SECURITY</code>, gated by a function tied to account ID. That means isolation is <span class="hl">enforced at the database layer</span>, not left to application code remembering to filter by tenant on every query.</p>
+                </section>
+
+                <section class="work-section-card">
+                    <h3 id="workflow">Access workflow</h3>
+                    <p>A three-tier approval workflow: <strong>Owners</strong> administer who can request a system, <strong>Approvers</strong> decide open tickets, and <strong>Provisioners</strong> grant access once approved. Every state change is stamped with who and when, so the <span class="hl">audit trail is a first-class fact</span>, not something inferred after the fact. Provisioning and closing a ticket are separate explicit steps, so granting access doesn't silently mark a request done.</p>
+                    <figure class="guide-shot">
+                        <img src="images/access request ticket.png" alt="A single access-request ticket showing its full lifecycle: Opened, Approved, Provisioner assigned, Provisioned, Closed, plus grouping with two other tickets from the same bulk request.">
+                        <figcaption>One ticket, start to finish: the lifecycle and audit trail I built.</figcaption>
+                    </figure>
+                </section>
+
+                <section class="work-section-card">
+                    <h3 id="shadow-it">Shadow IT</h3>
+                    <p>A smaller feature: a scanner surfacing third-party OAuth apps connected to a client's environment, vendors a company might not know are plugged into their systems. Less about time saved, more about <span class="hl">risk nobody was looking for</span>.</p>
+                    <figure class="guide-shot">
+                        <img src="images/shadow IT.png" alt="Shadow IT review table listing third-party OAuth apps like Docker, Claude, and Google Chrome, with users, scopes, and an Unchecked, Dismissed, or Checked status per app.">
+                        <figcaption>Every quietly-authorized app in one list, with a one-click approve or dismiss.</figcaption>
+                    </figure>
+                </section>
+
+                <p class="guide-back"><a class="work-link-internal" href="pages/experiences.html"><- Back to Projects + Experiences</a></p>
+            </article>
+        </main>
+        <script src="js/notes-accordion.js" defer></script>
+    </body>
+</html>

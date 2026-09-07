@@ -2,10 +2,20 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Open-source MuseScore plugins: Usage guide</title>
+        <meta name="description" content="A practical usage guide for the open-source MuseScore Git workflow plugins: daily commits, pulling remote changes, and reconciling diffs.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/musescore-git-plugins-guide.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Open-source MuseScore plugins: Usage guide">
+        <meta property="og:description" content="A practical usage guide for the open-source MuseScore Git workflow plugins: daily commits, pulling remote changes, and reconciling diffs.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/musescore-plugin-thumbnail.png">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/musescore-git-plugins-guide.html">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Open-source MuseScore plugins — Usage guide</title>
     </head>
     <body>
         <div class="top-bar">
@@ -29,7 +39,7 @@
                 <h1>Usage guide</h1>
                 <p class="guide-lead">
                     Practical steps for this open-source MuseScore 4 plugin suite: Git-backed scores, where files live, happy-path editing,
-                    and how to recover when your score and GitHub diverge—including the measure-level LCS diff workflow over score XML. Source and issues on
+                    and how to recover when your score and GitHub diverge, including the measure-level LCS diff workflow over score XML. Source and issues on
                     <a href="https://github.com/wwang038/musescore-git-plugins" target="_blank" rel="noopener noreferrer">GitHub</a>.
                 </p>
 
@@ -100,11 +110,11 @@
                 <p>On first use you may be asked for a GitHub repo URL. The plugin clones to a temp directory and moves only the <code>.git</code> directory into <code>Scores</code> so your working tree stays in the scores folder.</p>
 
                 <h2>Temporary files you can ignore or delete</h2>
-                <p>Generated helpers under <code>Plugins/</code> (timestamped <code>.bat</code>, PowerShell, etc.) are meant to be ephemeral. The README in the repo lists names like <code>musescore-git-push-*.bat</code>, <code>musescore-diff.ps1</code>, and similar — safe to remove if you’re tidying up.</p>
+                <p>Generated helpers under <code>Plugins/</code> (timestamped <code>.bat</code>, PowerShell, etc.) are meant to be ephemeral. The README in the repo lists names like <code>musescore-git-push-*.bat</code>, <code>musescore-diff.ps1</code>, and similar. Safe to remove if you’re tidying up.</p>
 
                 <h2>Troubleshooting quick list</h2>
                 <ul>
-                    <li><strong>Commit refuses:</strong> Ensure the open file is <code>Scores/&lt;Name&gt;.mscz</code>, not a standalone <code>.mscx</code> — save as <code>.mscz</code> in the Scores repo path.</li>
+                    <li><strong>Commit refuses:</strong> Ensure the open file is <code>Scores/&lt;Name&gt;.mscz</code>, not a standalone <code>.mscx</code>; save as <code>.mscz</code> in the Scores repo path.</li>
                     <li><strong>Pull says run Diff:</strong> Open the <code>- Copy</code> path exists, then run <strong>MuseScore Diff</strong> and complete <strong>Save to Main</strong> before committing again.</li>
                     <li><strong>.git missing:</strong> Run through Commit's first-time setup or initialize <code>Scores</code> as a repo first.</li>
                 </ul>

@@ -2,10 +2,21 @@
 <html lang="en">
     <head>
         <base href="../">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Projects + Experiences</title>
+        <meta name="description" content="Projects and internships by Winson Wang: a Word Hunt solver, open-source MuseScore Git plugins, Wharton conjoint research, PennVet automation, and SOC 2 work at Securest.">
+        <link rel="canonical" href="https://REPLACE-WITH-YOUR-DOMAIN/pages/experiences.html">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Projects + Experiences - Winson's Website">
+        <meta property="og:description" content="Projects and internships by Winson Wang: a Word Hunt solver, open-source MuseScore Git plugins, Wharton conjoint research, PennVet automation, and SOC 2 work at Securest.">
+        <meta property="og:image" content="https://REPLACE-WITH-YOUR-DOMAIN/images/about%20image.jpg">
+        <meta property="og:url" content="https://REPLACE-WITH-YOUR-DOMAIN/pages/experiences.html">
+        <meta name="twitter:card" content="summary_large_image">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/png" href="images/wwang%20projects%20favicon.png">
-        <title>Projects + Experiences</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     </head>
     <body class="experiences-page">
         <div class="top-bar">
@@ -27,34 +38,72 @@
             <div id="projects" style="padding-top: 3%;">
                 <h2 style="margin-bottom: 1%; margin-top: 5%;">Projects + Experiences</h2>
                 <p style="margin-bottom: 1%;">Here are some work I've done.</p>
+
+                <h3 class="year-heading">2026</h3>
                 <div class="works-grid">
-                    <a class="project-card" href="pages/word-hunt-solver.html">
-                        <img src="images/Video Project 2.gif" alt="Word Hunt Solver preview">
-                        <h3>Word Hunt Solver</h3>
-                        <p>Full-stack app with board solving, scoring, and leaderboard analytics.</p>
-                    </a>
                     <div class="project-card-wrap">
                         <a class="project-card" href="pages/musescore-git-plugins.html">
                             <video muted loop playsinline autoplay poster="images/musescore-plugin-thumbnail.png">
                                 <source src="images/Musescore_plugin_demo.mp4" type="video/mp4">
                             </video>
                             <h3>MuseScore Git Workflow Plugins | Open-Source Contribution</h3>
-                            <p>OSS contribution: MuseScore&nbsp;4 plugins for Git-backed scores with measure-level LCS merge and an in-editor visual diff.</p>
+                            <p>OSS contribution: MuseScore&nbsp;4 plugins for Git-backed scores with <span class="hl">measure-level LCS merge</span> and an in-editor visual diff.</p>
+                            <div class="project-tag-row">
+                                <span class="project-tag">Open Source</span>
+                                <span class="project-tag">Git</span>
+                                <span class="project-tag">QML</span>
+                            </div>
                         </a>
                         <a class="project-card-extra" href="pages/musescore-git-plugins-guide.html">Usage guide - how to use the plugins</a>
                     </div>
+                    <a class="project-card" href="pages/securest.html">
+                        <img src="images/systems page.png" alt="Securest preview">
+                        <h3>Software Engineering Intern @ Securest</h3>
+                        <p>Built the <span class="hl">connector framework</span> and access-review automation behind a SOC 2 compliance platform.</p>
+                        <div class="project-tag-row">
+                            <span class="project-tag">SOC 2</span>
+                            <span class="project-tag">Row-Level Security</span>
+                            <span class="project-tag">6 Connectors</span>
+                        </div>
+                    </a>
+                </div>
+
+                <h3 class="year-heading">2025</h3>
+                <div class="works-grid">
+                    <a class="project-card" href="pages/word-hunt-solver.html">
+                        <img src="images/Video Project 2.gif" alt="Word Hunt Solver preview">
+                        <h3>Word Hunt Solver</h3>
+                        <p>Full-stack app with <span class="hl">board solving, scoring, and leaderboard analytics</span>.</p>
+                        <div class="project-tag-row">
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                    </a>
                     <a class="project-card" href="pages/conjoint-research.html">
-                        <img src="images/work in progress.png" alt="Conjoint research preview">
+                        <img src="images/conjoint-research-placeholder.svg" alt="Conjoint research preview">
                         <h3>Conjoint Research @ Wharton</h3>
-                        <p>Statistical modeling optimization for consumer behavior analysis.</p>
+                        <p>Statistical modeling optimization for <span class="hl">consumer behavior analysis</span>.</p>
+                        <div class="project-tag-row">
+                            <span class="project-tag">~20x Faster</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">scikit-learn</span>
+                        </div>
                     </a>
                     <a class="project-card" href="pages/pennvet-equine.html">
-                        <img src="images/work in progress.png" alt="PennVet preview">
+                        <img src="images/pennvet-placeholder.svg" alt="PennVet preview">
                         <h3>Software Developer @ PennVet</h3>
-                        <p>Data pipeline automation and performance optimization in research workflows.</p>
+                        <p>Data pipeline automation and <span class="hl">performance optimization</span> in research workflows.</p>
+                        <div class="project-tag-row">
+                            <span class="project-tag">500% Faster</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Selenium</span>
+                        </div>
                     </a>
                 </div>
             </div>
         </main>
+        <script src="js/reveal.js" defer></script>
+        <script src="js/projects-reveal.js" defer></script>
     </body>
 </html>

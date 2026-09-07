@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-label="Abstract connected-node mark representing a research data pipeline">
+  <rect width="400" height="225" fill="#1b1f2b"/>
+  <g stroke="#7aa2ff" stroke-width="2" fill="none" opacity="0.8">
+    <line x1="90" y1="112" x2="180" y2="70"/>
+    <line x1="90" y1="112" x2="180" y2="155"/>
+    <line x1="180" y1="70" x2="270" y2="112"/>
+    <line x1="180" y1="155" x2="270" y2="112"/>
+    <line x1="270" y1="112" x2="330" y2="80"/>
+  </g>
+  <g>
+    <circle cx="90" cy="112" r="10" fill="#7aa2ff"/>
+    <circle cx="180" cy="70" r="10" fill="#9f7aea"/>
+    <circle cx="180" cy="155" r="10" fill="#9f7aea"/>
+    <circle cx="270" cy="112" r="10" fill="#7aa2ff"/>
+    <circle cx="330" cy="80" r="8" fill="#d566b1"/>
+  </g>
+</svg>
